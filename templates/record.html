@@ -1,0 +1,50 @@
+<!-- <link rel="stylesheet" href="/static/asciinema-player.css">
+
+<div class="modal fade" id="modalForm">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body" id="play">
+        </div>
+      </div>
+    </div>
+  </div> -->
+  
+  <!-- // 播放录像 -->
+<!-- <script>    
+  function play(host,user,time,file) {
+    $('#play').html(
+      '<asciinema-player id="play" title="WebSSH Record" author="ops-coffee.cn"  src="/static/record/'+file+'" speed="3" '+
+      'idle-time-limit="2" poster="data:text/plain,\x1b[1;32m'+time+
+      '\x1b[1;0m用户\x1b[1;32m'+user+
+      '\x1b[1;0m连接主机\x1b[1;32m'+host+
+      '\x1b[1;0m的录像记录"></asciinema-player>'
+    )
+  
+    $('#modalForm').modal('show');
+  }
+</script>     -->
+
+<!-- <script>    
+    function play(host,user,time,file) {
+      $('#play').html(
+        '<asciinema-player id="play" title="WebSSH Record" author="ops-coffee.cn"  src="/static/record/192.168.1.111.root.1587310719.cast" speed="3" '+
+        'idle-time-limit="2" poster="data:text/plain,\x1b[1;32m'+time+
+        '\x1b[1;0m用户\x1b[1;32m'+user+
+        '\x1b[1;0m连接主机\x1b[1;32m'+host+
+        '\x1b[1;0m的录像记录"></asciinema-player>'
+      )
+    
+      $('#modalForm').modal('show');
+    }
+  </script>    -->
+
+
+  <html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="/static/asciinema-player.css" />
+    </head>
+    <body>
+      <asciinema-player src="/static/record/192.168.1.111.root.1587311938.cast" speed="3"></asciinema-player>
+      <script src="/static/asciinema-player.js"></script>
+    </body>
+    </html>
