@@ -10,3 +10,5 @@ class User(models.Model):
     role     = models.TextField()
     add_date = models.DateTimeField('保存日期', default=timezone.now)
 
+    def __unicode__(self):
+        return self.username

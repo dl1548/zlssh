@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'channels',
     'webssh',
+    'zluser'
 ]
 
 ASGI_APPLICATION = 'zlssh.routing.application'
