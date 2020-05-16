@@ -14,11 +14,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from webssh import views
+
+from rest_framework.documentation import include_docs_urls              # api doc
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('webssh', views.index, name='webssh-url'),
-    path('history', views.history, name='webssh-his'),
+    path('docs/', include_docs_urls(title="SSH-API", public=True)),
+
+    # old
+    # path('webssh/', views.index, name='webssh-url'),
+    # path('history/', views.history, name='webssh-his'),
+
+    # include app
+    path('user/', include('zluser.urls')),
+    path('web/ssh/', include('webssh.urls')),
 ]

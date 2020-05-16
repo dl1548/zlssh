@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'rest_framework',
     'channels',
     'webssh',
     'zluser'
@@ -139,7 +140,10 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 # STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
-# 跨域
+
+# -----------------------------------------跨域 设置-------------------------------------------------
+# app: 'corsheaders',
+
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
 #CORS_ORIGIN_WHITELIST = (
@@ -168,3 +172,29 @@ CORS_ALLOW_HEADERS = (
     'Pragma',
 )
 
+# -----------------------------------------Tokne 设置-------------------------------------------------
+# app : 'rest_framework',
+
+from datetime import timedelta
+# DRF
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+
+}
+# simple jwt
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=8),      # access_token的持续时间
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),     # refresh_token的持续时间
+    # 'AUTH_HEADER_TYPES': ('Bearer',),
+}
+
+# ---------------------------------------------------------------------------------------------------
