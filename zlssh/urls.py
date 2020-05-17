@@ -30,5 +30,6 @@ urlpatterns = [
 
     # include app
     path('user/', include('zluser.urls')),
+    path('host/', include('zlhost.urls')),
     path('web/ssh/', include('webssh.urls')),
 ]

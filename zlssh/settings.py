@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'channels',
     'webssh',
-    'zluser'
+    'zluser',
+    'zlhost'
 ]
 
 ASGI_APPLICATION = 'zlssh.routing.application'
@@ -54,7 +55,8 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
+    
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -146,9 +148,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
-#CORS_ORIGIN_WHITELIST = (
-#    '*'
-#)
+# CORS_ORIGIN_WHITELIST = ('*')
 CORS_ALLOW_METHODS = (
     'DELETE',
     'GET',
@@ -170,6 +170,8 @@ CORS_ALLOW_HEADERS = (
     'x-csrftoken',
     'x-requested-with',
     'Pragma',
+    'x-token',
+    'token',
 )
 
 # -----------------------------------------Tokne 设置-------------------------------------------------
