@@ -4,6 +4,11 @@ from rest_framework import serializers, viewsets
 
 # Serializers define the API representation.
 
+
+
+class NullARGSSerializer(serializers.Serializer):
+    pass
+
 class UserListAPISerializer(serializers.Serializer):
     username = serializers.CharField(label="username", help_text='username',required=False)
 
