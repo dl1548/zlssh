@@ -30,11 +30,6 @@ class WebSSH(WebsocketConsumer):
     #     self.time = time.time()
     #     self.filename = '%s.%s.%d.cast' % (host, user, self.time)
 
-
-
-
-
-
     def connect(self):
         """
         打开 websocket 连接, 通过前端传入的参数尝试连接 ssh 主机
